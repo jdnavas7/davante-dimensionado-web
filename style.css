@@ -162,3 +162,408 @@ img {
 .nav-menu li a.active::after {
     width: 100%;
 }
+
+/* =========================
+   HERO SECTION
+   ========================= */
+.hero-section {
+    position: relative;
+    padding: 120px 0 80px;
+    background-image: url('/api/placeholder/1200/600');
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    color: var(--white);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 32, 89, 0.85);
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.app-download p {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.store-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    color: var(--text-dark);
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: var(--transition);
+}
+
+.store-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.store-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.apple-icon {
+    color: #000;
+    background-color: transparent;
+}
+
+.google-icon {
+    color: #4285F4;
+    background-color: transparent;
+}
+
+.store-btn span {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.store-btn strong {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* =========================
+   DESCARGA DIRECTA
+   ========================= */
+.direct-download {
+    margin-top: 18px;
+    width: 100%;
+    max-width: 370px;
+}
+
+.direct-download p {
+    font-size: 14px;
+    color: var(--white);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.direct-download-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--light-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.direct-download-btn:hover {
+    background-color: var(--primary-blue);
+}
+
+/* =========================
+   FORMULARIO DE SUSCRIPCIÓN
+   ========================= */
+.subscription-form {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    color: var(--text-dark);
+}
+
+.subscription-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.subscription-form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 53, 148, 0.1);
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form-group.checkbox input {
+    width: auto;
+    margin-top: 3px;
+}
+
+.form-group.checkbox label {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   SECCIÓN CALCULADORA
+   ========================= */
+.calculator-section {
+    padding: 100px 0;
+    background-color: var(--light-gray);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.calculator-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.calculator-info h3 {
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.calculator-info p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.feature-list {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.api-placeholder {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+}
+
+.api-placeholder h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+}
+
+.api-placeholder p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-light);
+}
+
+.api-mock {
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.mock-field {
+    margin-bottom: 15px;
+}
+
+.mock-field label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.mock-field input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+}
+
+.mock-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    margin: 15px 0;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.mock-result {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.mock-result p {
+    margin: 0;
+    color: #999;
+    font-style: italic;
+}
+
+/* =========================
+   SECCIÓN PRIVACIDAD
+   ========================= */
+.privacy-section {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.privacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.privacy-block {
+    margin-bottom: 40px;
+}
+
+.privacy-block h3 {
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.privacy-block p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.privacy-block ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.privacy-block li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.privacy-block li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+}
