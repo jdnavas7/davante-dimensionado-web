@@ -1,0 +1,221 @@
+<!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/Davante_logo_fundacion_vert_white.png" alt="Logo Dimensionado Fotovoltaico" class="footer-img">
+                    <p>Soluciones de dimensionado fotovoltaico profesional</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navegación</h4>
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#calculadora">Calculadora</a></li>
+                            <li><a href="#privacidad">Privacidad</a></li>
+                            <li><a href="#terminos">Términos de Uso</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Descargas</h4>
+                        <ul>
+                            <li><a href="#">App Store</a></li>
+                            <li><a href="#">Google Play</a></li>
+                            <li><a href="#">Descargar aquí</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Síguenos</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook">FB</a>
+                            <a href="#" aria-label="Twitter">TW</a>
+                            <a href="#" aria-label="Instagram">IG</a>
+                            <a href="#" aria-label="LinkedIn">LI</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dimensionado Fotovoltaico. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+<style>
+	/* 
+	Hoja de estilos - Header responsive sin JavaScript
+	Colores principales:
+	- Azul: rgb(0, 53, 148)
+	- Gris claro: rgb(237, 237, 237)
+*/
+
+/* =========================
+	VARIABLES Y RESET
+   ========================= */
+:root {
+    --primary-blue: rgb(0, 53, 148);
+    --light-gray: rgb(237, 237, 237);
+    --white: #ffffff;
+    --dark-blue: rgb(0, 32, 89);
+    --light-blue: rgb(51, 102, 187);
+    --text-dark: #333333;
+    --text-light: #666666;
+    --shadow: 0 4px 10px rgba(0, 53, 148, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* =========================
+   ELEMENTOS COMUNES
+   ========================= */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+    /* =========================
+   FOOTER
+   ========================= */
+.main-footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;      /* Ocupa todo el ancho disponible */
+    max-width: none;  /* Sin límite de ancho */
+}
+
+.footer-img {
+    width: 100%;      /* Ocupa todo el ancho del contenedor */
+    height: auto;     /* Mantiene la proporción */
+    margin-bottom: 15px;
+    object-fit: contain; /* Asegura que no se deforme */
+}
+
+.footer-logo p {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background-color: var(--light-blue);
+}
+
+.footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-column a {
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    opacity: 1;
+    color: var(--light-blue);
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background-color: var(--light-blue);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+</style>
