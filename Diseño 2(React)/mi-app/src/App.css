@@ -1,0 +1,1747 @@
+/**
+ * ============================================================================
+ * HOJA DE ESTILOS PARA APLICACIÓN DE DIMENSIONADO FOTOVOLTAICO
+ * ============================================================================
+ * 
+ * Esta hoja de estilos contiene todos los estilos para la aplicación web
+ * de dimensionado fotovoltaico, organizada en secciones claramente definidas.
+ * 
+ * ESTRUCTURA:
+ * 1. Estilos base y reset
+ * 2. Barra de navegación
+ * 3. Sección Hero (inicio)
+ * 4. Formulario de contacto
+ * 5. Sección de términos
+ * 6. Sección de privacidad
+ * 7. Sección de desarrolladores
+ * 8. Sección de contacto
+ * 9. Footer
+ * 10. Animaciones
+ * 11. Responsive design
+ */
+
+/* ============================================================================
+   ESTILOS BASE Y RESET
+   ============================================================================ */
+
+/**
+ * Reset CSS básico para eliminar márgenes y paddings por defecto
+ * Establece box-sizing: border-box para un mejor control de dimensiones
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**
+ * Contenedor principal de la aplicación
+ * Establece la altura mínima, color de fondo y fuente base
+ */
+.app-container {
+  min-height: 100vh;                    /* Altura mínima de toda la ventana */
+  background-color: #f9fafb;            /* Color de fondo gris claro */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ============================================================================
+   BARRA DE NAVEGACIÓN
+   ============================================================================ */
+
+/**
+ * Barra de navegación principal
+ * Posición fija en la parte superior con z-index alto
+ */
+.navbar {
+  position: fixed;                      /* Fija en la parte superior */
+  top: 0;
+  width: 100%;                          /* Ocupa todo el ancho */
+  z-index: 50;                          /* Por encima de otros elementos */
+  background-color: #1a365d;           /* Azul oscuro corporativo */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/**
+ * Contenedor interno de la navegación
+ * Centra el contenido y limita el ancho máximo
+ */
+.nav-container {
+  max-width: 1280px;                    /* Ancho máximo para pantallas grandes */
+  margin: 0 auto;                       /* Centrado horizontal */
+  padding: 0 1rem;                      /* Padding lateral */
+}
+
+/**
+ * Contenido de la navegación
+ * Flexbox para distribuir elementos horizontalmente
+ */
+.nav-content {
+  display: flex;
+  justify-content: space-between;       /* Espacio entre elementos */
+  align-items: center;                  /* Centrado vertical */
+  height: 80px;                         /* Altura fija de la barra */
+}
+
+/**
+ * Contenedor del logo y nombre de la empresa
+ */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;                            /* Espacio entre logo y texto */
+}
+
+/**
+ * Imagen del logo principal
+ */
+.logo-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;                  /* Mantiene proporciones */
+}
+
+/**
+ * Logo alternativo (fallback) cuando la imagen no carga
+ */
+.logo-fallback {
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+ * Icono interno del logo fallback
+ */
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6); /* Gradiente azul-púrpura */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/**
+ * Texto del logo/nombre de la empresa
+ */
+.logo-text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/**
+ * Menú de navegación para escritorio
+ * Oculto en dispositivos móviles
+ */
+.desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 48px;                            /* Espacio generoso entre enlaces */
+}
+
+/**
+ * Enlaces de navegación individuales
+ * Botones con efectos hover y transiciones suaves
+ */
+.nav-link {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent; /* Línea inferior invisible por defecto */
+  cursor: pointer;
+  transition: all 0.3s ease;           /* Transición suave */
+  text-decoration: none;
+}
+
+/**
+ * Efecto hover de los enlaces de navegación
+ * Cambia color y muestra línea inferior
+ */
+.nav-link:hover {
+  color: #93c5fd;                       /* Azul claro */
+  border-bottom-color: #93c5fd;         /* Línea inferior visible */
+}
+
+/**
+ * Botón hamburguesa para menú móvil
+ * Oculto por defecto, visible solo en móviles
+ */
+.mobile-menu-button {
+  display: none;
+}
+
+/**
+ * Icono hamburguesa del menú móvil
+ */
+.hamburger {
+  color: white;
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/**
+ * Menú desplegable móvil
+ * Se muestra cuando se activa el botón hamburguesa
+ */
+.mobile-menu {
+  background-color: #1a365d;           /* Mismo color que la navbar */
+  border-top: 1px solid #2563eb;       /* Línea separadora azul */
+}
+
+/**
+ * Contenido del menú móvil
+ */
+.mobile-menu-content {
+  padding: 8px 16px 12px;
+  display: flex;
+  flex-direction: column;              /* Enlaces en columna */
+  gap: 4px;
+}
+
+/**
+ * Enlaces individuales del menú móvil
+ */
+.mobile-nav-link {
+  color: white;
+  background-color: transparent;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/**
+ * Efecto hover de enlaces móviles
+ */
+.mobile-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+}
+
+/* ============================================================================
+   SECCIÓN HERO (PÁGINA DE INICIO)
+   ============================================================================ */
+
+/**
+ * Sección principal de bienvenida
+ * Ocupa toda la altura de la ventana con gradiente de fondo
+ */
+.hero-section {
+  padding-top: 80px;                   /* Compensa la altura de la navbar fija */
+  min-height: 100vh;                   /* Altura completa de la ventana */
+  display: flex;
+  align-items: center;                 /* Centra verticalmente el contenido */
+  background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%); /* Gradiente azul */
+  border: 3px solid #93c5fd;           /* Borde azul claro */
+  border-radius: 16px;
+  margin: 20px;
+  transition: all 0.3s ease;          /* Transición para efectos hover */
+  cursor: pointer;
+}
+
+/**
+ * Efecto hover de la sección hero
+ * Escalado sutil y sombra cuando se pasa el mouse
+ */
+.hero-section:hover {
+  transform: scale(1.02);              /* Escalado del 2% */
+  box-shadow: 0 25px 50px -12px rgba(26, 54, 93, 0.3); /* Sombra pronunciada */
+}
+
+/**
+ * Contenedor interno del hero
+ * Centra y limita el ancho del contenido
+ */
+.hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 1rem;
+}
+
+/**
+ * Grid de dos columnas del hero
+ * Contenido de texto + formulario de contacto
+ */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;      /* Dos columnas iguales */
+  gap: 48px;                           /* Espacio entre columnas */
+  align-items: center;
+}
+
+/**
+ * Contenido de texto del hero
+ */
+.hero-content {
+  color: white;
+}
+
+/**
+ * Título principal del hero
+ * Tipografía grande y llamativa
+ */
+.hero-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  line-height: 1.2;                    /* Espaciado de líneas compacto */
+}
+
+/**
+ * Texto resaltado dentro del título
+ * Color de acento azul claro
+ */
+.hero-title-accent {
+  color: #93c5fd;
+}
+
+/**
+ * Subtítulo descriptivo del hero
+ */
+.hero-subtitle {
+  font-size: 20px;
+  margin-bottom: 32px;
+  color: #d1d5db;                      /* Gris claro */
+  line-height: 1.6;                    /* Mejor legibilidad */
+}
+
+/**
+ * Contenedor de enlaces a las aplicaciones móviles
+ */
+.app-links-container {
+  display: flex;
+  flex-direction: column;              /* Enlaces en columna */
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/**
+ * Enlaces individuales a App Store y Google Play
+ * Botones oscuros con bordes redondeados
+ */
+.app-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Efecto hover de los enlaces de aplicación
+ */
+.app-link:hover {
+  background-color: #374151;          /* Gris más claro */
+}
+
+/**
+ * Badges/imágenes de las tiendas de aplicaciones
+ */
+.app-badge {
+  height: 48px;
+  object-fit: contain;
+}
+
+/**
+ * Contenido alternativo cuando no cargan las imágenes
+ */
+.app-link-fallback {
+  display: flex;
+  align-items: center;
+}
+
+/**
+ * Icono alternativo de las aplicaciones
+ */
+.app-icon {
+  margin-right: 16px;
+}
+
+/**
+ * Texto alternativo de los enlaces
+ */
+.app-link-text {
+  text-align: left;
+}
+
+/**
+ * Texto pequeño de los enlaces alternativos
+ */
+.app-link-small {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/**
+ * Texto grande de los enlaces alternativos
+ */
+.app-link-big {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ============================================================================
+   FORMULARIO DE CONTACTO
+   ============================================================================ */
+
+/**
+ * Contenedor principal del formulario
+ * Tarjeta blanca con sombra pronunciada
+ */
+.contact-form {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Sombra dramática */
+  padding: 32px;
+}
+
+/**
+ * Título del formulario de contacto
+ */
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #374151;                      /* Gris oscuro */
+  margin-bottom: 24px;
+}
+
+/**
+ * Contenedor de los campos del formulario
+ */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;                           /* Espacio entre campos */
+}
+
+/**
+ * Grupo individual de campo (label + input)
+ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Etiquetas de los campos del formulario
+ */
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+/**
+ * Campos de entrada de texto
+ * Estilo uniforme con bordes redondeados
+ */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;           /* Borde gris claro */
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;                       /* Elimina outline por defecto */
+  box-sizing: border-box;
+}
+
+/**
+ * Efecto focus de los campos de entrada
+ * Borde azul y sombra sutil cuando está activo
+ */
+.form-input:focus {
+  border-color: #3b82f6;               /* Azul */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); /* Sombra azul sutil */
+}
+
+/**
+ * Campo de texto largo (textarea)
+ * Mismo estilo que los inputs pero sin redimensionar
+ */
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  outline: none;
+  resize: none;                        /* Impide redimensionar */
+  box-sizing: border-box;
+}
+
+/**
+ * Efecto focus del textarea
+ */
+.form-textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/**
+ * Botón de envío del formulario
+ * Botón principal con color corporativo
+ */
+.form-button {
+  width: 100%;
+  padding: 12px 24px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  background-color: #1a365d;           /* Azul corporativo */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Efecto hover del botón de envío
+ * Cambio de color y escalado sutil
+ */
+.form-button:hover {
+  background-color: #1e40af;           /* Azul más brillante */
+  transform: scale(1.05);              /* Escalado del 5% */
+}
+
+/* ============================================================================
+   ESTILOS GENERALES DE SECCIONES
+   ============================================================================ */
+
+/**
+ * Contenedor estándar para secciones de contenido
+ * Centra y limita el ancho del contenido
+ */
+.section-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/**
+ * Títulos principales de las secciones
+ * Tipografía consistente y centrada
+ */
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 48px;
+  color: #1a365d;                      /* Azul corporativo */
+}
+
+/* ============================================================================
+   SECCIÓN DE TÉRMINOS DE USO
+   ============================================================================ */
+
+/**
+ * Contenedor principal de la sección de términos
+ * Fondo blanco con efectos hover
+ */
+.terms-section {
+  padding: 80px 0;
+  background-color: white;
+  border: 3px solid #1a365d;           /* Borde azul corporativo */
+  border-radius: 16px;
+  margin: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/**
+ * Efecto hover de la sección de términos
+ * Elevación y cambio de color de borde
+ */
+.terms-section:hover {
+  transform: translateY(-5px);         /* Elevación de 5px */
+  box-shadow: 0 25px 50px -12px rgba(26, 54, 93, 0.4);
+  border-color: #3b82f6;               /* Azul más claro */
+}
+
+/**
+ * Contenido interno de los términos
+ * Fondo gris claro con borde decorativo
+ */
+.terms-content {
+  background-color: #f9fafb;
+  padding: 32px;
+  border-radius: 12px;
+  border: 2px solid #93c5fd;           /* Borde azul claro */
+  transition: all 0.3s ease;
+}
+
+/**
+ * Efecto hover del contenido de términos
+ */
+.terms-content:hover {
+  background-color: #f1f5f9;           /* Gris más oscuro */
+  border-color: #1a365d;               /* Borde azul oscuro */
+  transform: scale(1.02);              /* Escalado sutil */
+}
+
+/**
+ * Subtítulos de los apartados de términos
+ */
+.terms-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a365d;
+}
+
+/**
+ * Párrafos de contenido de términos
+ */
+.terms-paragraph {
+  color: #374151;                      /* Gris oscuro */
+  margin-bottom: 24px;
+  line-height: 1.6;                    /* Mejor legibilidad */
+}
+
+/* ============================================================================
+   SECCIÓN DE POLÍTICA DE PRIVACIDAD
+   ============================================================================ */
+
+/**
+ * Contenedor principal de la sección de privacidad
+ * Fondo gris muy claro con efectos interactivos
+ */
+.privacy-section {
+  padding: 80px 0;
+  background-color: #f7fafc;           /* Gris muy claro */
+  border: 3px solid #1a365d;
+  border-radius: 16px;
+  margin: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/**
+ * Efecto hover de la sección de privacidad
+ */
+.privacy-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px -12px rgba(26, 54, 93, 0.4);
+  border-color: #3b82f6;
+}
+
+/**
+ * Contenedor interno de privacidad
+ * Ancho mayor para acomodar el grid de tarjetas
+ */
+.privacy-container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/**
+ * Cabecera de la sección de privacidad
+ */
+.privacy-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+/**
+ * Título principal de privacidad
+ * Más grande que los títulos estándar
+ */
+.privacy-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #1a365d;
+}
+
+/**
+ * Línea divisoria decorativa
+ * Gradiente azul-púrpura
+ */
+.privacy-divider {
+  width: 96px;
+  height: 4px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  margin: 0 auto 24px;
+}
+
+/**
+ * Subtítulo de la sección de privacidad
+ */
+.privacy-subtitle {
+  font-size: 20px;
+  color: #6b7280;                      /* Gris medio */
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/**
+ * Banner informativo de privacidad
+ * Fondo con gradiente y borde lateral azul
+ */
+.privacy-banner {
+  background: linear-gradient(to right, #dbeafe, #f3e8ff); /* Gradiente azul-púrpura claro */
+  border-left: 4px solid #3b82f6;     /* Borde lateral azul */
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/**
+ * Efecto hover del banner
+ */
+.privacy-banner:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Icono del banner informativo
+ */
+.privacy-banner-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #3b82f6;
+  border-radius: 50%;                  /* Círculo perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;                      /* No se reduce */
+}
+
+/**
+ * Título del banner informativo
+ */
+.privacy-banner-title {
+  font-weight: 600;
+  color: #1e40af;                      /* Azul oscuro */
+  margin-bottom: 8px;
+}
+
+/**
+ * Texto del banner informativo
+ */
+.privacy-banner-text {
+  color: #374151;
+}
+
+/**
+ * Grid de tarjetas de privacidad
+ * Diseño responsive que se adapta al contenido
+ */
+.privacy-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas adaptables */
+  gap: 32px;
+}
+
+/**
+ * Tarjeta individual de privacidad
+ * Fondo blanco con sombra y efectos hover
+ */
+.privacy-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;                    /* Contenido no se desborda */
+  transition: all 0.3s ease;
+  border: 2px solid #93c5fd;
+}
+
+/**
+ * Efecto hover de las tarjetas de privacidad
+ * Elevación notable
+ */
+.privacy-card:hover {
+  transform: translateY(-8px);         /* Elevación mayor */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/**
+ * Cabecera de las tarjetas de privacidad
+ * Área superior con color de fondo temático
+ */
+.privacy-card-header {
+  padding: 24px;
+  color: white;
+}
+
+/**
+ * Tarjeta de información - gradiente azul
+ */
+.info-card {
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+}
+
+/**
+ * Tarjeta de uso - gradiente verde
+ */
+.usage-card {
+  background: linear-gradient(to right, #10b981, #059669);
+}
+
+/**
+ * Tarjeta de seguridad - gradiente rojo
+ */
+.security-card {
+  background: linear-gradient(to right, #ef4444, #dc2626);
+}
+
+/**
+ * Tarjeta de contacto - gradiente índigo
+ */
+.contact-card {
+  background: linear-gradient(to right, #6366f1, #4f46e5);
+}
+
+/**
+ * Icono de las tarjetas de privacidad
+ * Fondo semi-transparente con bordes redondeados
+ */
+.privacy-card-icon {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.2); /* Blanco semi-transparente */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/**
+ * Título de las tarjetas de privacidad
+ */
+.privacy-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/**
+ * Contenido de las tarjetas de privacidad
+ * Área blanca inferior
+ */
+.privacy-card-content {
+  padding: 24px;
+}
+
+/**
+ * Texto descriptivo de las tarjetas
+ */
+.privacy-card-text {
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+/**
+ * Lista de elementos en las tarjetas
+ */
+.privacy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/**
+ * Elemento individual de la lista
+ * Fondo gris claro con efecto hover
+ */
+.privacy-list-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #f8fafc;           /* Gris muy claro */
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/**
+ * Efecto hover de los elementos de lista
+ */
+.privacy-list-item:hover {
+  background-color: #f1f5f9;           /* Gris ligeramente más oscuro */
+}
+
+/**
+ * Punto decorativo de los elementos de lista
+ */
+.privacy-list-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+/**
+ * Punto azul para tarjeta de información
+ */
+.info-dot {
+  background-color: #3b82f6;
+}
+
+/**
+ * Punto verde para tarjeta de uso
+ */
+.usage-dot {
+  background-color: #10b981;
+}
+
+/**
+ * Grid de badges de seguridad
+ * Dos columnas para los indicadores SSL/TLS
+ */
+.security-badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;      /* Dos columnas iguales */
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/**
+ * Badge individual de seguridad
+ */
+.security-badge {
+  text-align: center;
+  padding: 12px;
+  background-color: #fef2f2;           /* Rosa muy claro */
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/**
+ * Efecto hover de los badges de seguridad
+ */
+.security-badge:hover {
+  background-color: #fecaca;           /* Rosa ligeramente más oscuro */
+}
+
+/**
+ * Icono de los badges de seguridad
+ */
+.security-badge-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+  color: white;
+}
+
+/**
+ * Icono de seguridad con fondo rojo
+ */
+.security-icon {
+  background-color: #ef4444;
+}
+
+/**
+ * Texto de los badges de seguridad
+ */
+.security-badge-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #dc2626;                      /* Rojo oscuro */
+}
+
+/**
+ * Contenedor de enlaces de contacto
+ */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/**
+ * Enlaces de contacto individuales
+ */
+.contact-link {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #eef2ff;           /* Azul muy claro */
+  border-radius: 8px;
+  text-decoration: none;
+  color: #4338ca;                      /* Púrpura */
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+/**
+ * Efecto hover de los enlaces de contacto
+ */
+.contact-link:hover {
+  background-color: #e0e7ff;           /* Azul ligeramente más oscuro */
+}
+
+/**
+ * Icono de los enlaces de contacto
+ */
+.contact-link-icon {
+  margin-right: 12px;
+}
+
+/**
+ * Botón de contacto
+ */
+.contact-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: #eef2ff;
+  border-radius: 8px;
+  border: none;
+  color: #4338ca;                      /* Púrpura */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/**
+ * Efecto hover del botón de contacto
+ */
+.contact-button:hover {
+  background-color: #e0e7ff;
+}
+
+/* ============================================================================
+   SECCIÓN DE DESARROLLADORES
+   ============================================================================ */
+
+/**
+ * Contenedor principal de la sección de desarrolladores
+ * Fondo gris claro con efectos interactivos
+ */
+.developers-section {
+  padding: 80px 0;
+  background-color: #f7fafc;
+  border: 3px solid #1a365d;
+  border-radius: 16px;
+  margin: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/**
+ * Efecto hover de la sección de desarrolladores
+ */
+.developers-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px -12px rgba(26, 54, 93, 0.4);
+  border-color: #3b82f6;
+}
+
+/**
+ * Contenedor interno de desarrolladores
+ * Ancho expandido para acomodar más tarjetas (13 desarrolladores)
+ */
+.developers-container {
+  max-width: 1400px;                   /* Expandido de 1152px a 1400px */
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/**
+ * Título de la sección de desarrolladores
+ */
+.developers-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #1a365d;
+}
+
+/**
+ * Subtítulo descriptivo de desarrolladores
+ */
+.developers-subtitle {
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 512px;
+  margin: 0 auto 48px;
+}
+
+/**
+ * Grid de tarjetas de desarrolladores
+ * Diseño adaptable que acomoda las 13 tarjetas de forma elegante
+ */
+.developers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas adaptables */
+  gap: 24px;                           /* Espacio reducido para acomodar más tarjetas */
+  justify-items: center;               /* Centra las tarjetas */
+}
+
+/**
+ * Tarjeta individual de desarrollador
+ * Diseño compacto pero elegante
+ */
+.developer-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid #93c5fd;
+  width: 100%;
+  max-width: 320px;                    /* Ancho máximo controlado */
+}
+
+/**
+ * Efecto hover de las tarjetas de desarrollador
+ * Elevación y cambio de borde
+ */
+.developer-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #1a365d;
+  transform: translateY(-4px);         /* Elevación sutil */
+}
+
+/**
+ * Contenido interno de las tarjetas de desarrollador
+ */
+.developer-card-content {
+  padding: 24px;                       /* Padding optimizado */
+  text-align: center;
+}
+
+/**
+ * Avatar circular de cada desarrollador
+ * Muestra las iniciales con fondo de color
+ */
+.developer-avatar {
+  width: 80px;                         /* Tamaño optimizado (reducido de 96px) */
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;                     /* Tamaño de fuente reducido */
+  font-weight: bold;
+}
+
+/**
+ * Gradientes de colores para los avatares
+ * Seis variaciones diferentes que se repiten
+ */
+.dev-gradient-1 {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6); /* Azul-Púrpura */
+}
+
+.dev-gradient-2 {
+  background: linear-gradient(135deg, #10b981, #14b8a6); /* Verde-Turquesa */
+}
+
+.dev-gradient-3 {
+  background: linear-gradient(135deg, #ec4899, #ef4444); /* Rosa-Rojo */
+}
+
+.dev-gradient-4 {
+  background: linear-gradient(135deg, #f59e0b, #f97316); /* Amarillo-Naranja */
+}
+
+.dev-gradient-5 {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); /* Índigo-Púrpura */
+}
+
+.dev-gradient-6 {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6); /* Cian-Azul */
+}
+
+/**
+ * Nombre del desarrollador
+ * Tipografía optimizada para espacios compactos
+ */
+.developer-name {
+  font-size: 18px;                     /* Tamaño reducido para nombres largos */
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #1a365d;
+  line-height: 1.3;                    /* Espaciado de líneas compacto */
+}
+
+/**
+ * Rol/posición del desarrollador
+ */
+.developer-role {
+  color: #6b7280;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/**
+ * Descripción del desarrollador
+ * NOTA: Actualmente oculta, pero estilos mantenidos por si se reactiva
+ */
+.developer-description {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/**
+ * Contenedor de enlaces sociales
+ */
+.developer-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/**
+ * Enlaces sociales individuales
+ */
+.social-link {
+  color: #9ca3af;                      /* Gris claro */
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/**
+ * Efecto hover de los enlaces sociales
+ */
+.social-link:hover {
+  color: #3b82f6;                      /* Azul */
+}
+
+/* ============================================================================
+   SECCIÓN DE CONTACTO
+   ============================================================================ */
+
+/**
+ * Contenedor principal de la sección de contacto
+ * Fondo azul oscuro con efectos de elevación
+ */
+.contact-section {
+  padding: 80px 0;
+  background-color: #1a365d;           /* Azul oscuro corporativo */
+  border: 3px solid #93c5fd;
+  border-radius: 16px;
+  margin: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/**
+ * Efecto hover de la sección de contacto
+ */
+.contact-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px -12px rgba(147, 197, 253, 0.4); /* Sombra azul */
+  border-color: #60a5fa;               /* Azul más claro */
+}
+
+/**
+ * Contenedor interno de contacto
+ */
+.contact-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/**
+ * Título de la sección de contacto
+ */
+.contact-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 32px;
+}
+
+/**
+ * Subtítulo de contacto
+ */
+.contact-subtitle {
+  font-size: 20px;
+  color: #d1d5db;                      /* Gris claro */
+  margin-bottom: 32px;
+}
+
+/**
+ * Contenedor de información de contacto
+ * Flexbox que se adapta a múltiples elementos
+ */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;                           /* Espacio reducido para acomodar más elementos */
+  margin-bottom: 32px;
+  flex-wrap: wrap;                     /* Permite salto de línea en móviles */
+}
+
+/**
+ * Elemento individual de información de contacto
+ * Email, teléfonos y horario con efectos hover
+ */
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  padding: 8px 12px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/**
+ * Efecto hover de los elementos de contacto
+ */
+.contact-info-item:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Más opaco */
+  transform: translateY(-2px);         /* Elevación sutil */
+}
+
+/**
+ * Iconos de los elementos de contacto
+ */
+.contact-info-icon {
+  margin-right: 8px;
+  flex-shrink: 0;                      /* No se reduce */
+}
+
+/**
+ * Botón principal de llamada a la acción
+ */
+.contact-cta-button {
+  padding: 12px 24px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 2px solid #93c5fd;
+  cursor: pointer;
+  background-color: transparent;       /* Fondo transparente */
+}
+
+/**
+ * Efecto hover del botón CTA
+ * Inversión de colores
+ */
+.contact-cta-button:hover {
+  background-color: #93c5fd;
+  color: #1a365d;                      /* Texto azul oscuro */
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+/**
+ * Footer principal de la aplicación
+ * Fondo gris oscuro con información de la empresa
+ */
+.footer {
+  padding: 48px 0;
+  background-color: #2d3748;           /* Gris oscuro */
+}
+
+/**
+ * Contenedor interno del footer
+ */
+.footer-container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/**
+ * Contenido principal del footer
+ * Logo/información a la izquierda, redes sociales a la derecha
+ */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+/**
+ * Sección izquierda del footer
+ * Logo y información de la empresa
+ */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Contenedor del logo del footer
+ */
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/**
+ * Logo principal del footer
+ */
+.footer-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/**
+ * Logo alternativo del footer
+ */
+.footer-logo-fallback {
+  width: 64px;
+  height: 64px;
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Icono del logo alternativo del footer
+ */
+.footer-logo-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/**
+ * Texto del logo del footer
+ */
+.footer-logo-text {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/**
+ * Tagline/lema de la empresa
+ */
+.footer-tagline {
+  color: #9ca3af;                      /* Gris claro */
+}
+
+/**
+ * Contenedor de redes sociales del footer
+ */
+.footer-social {
+  display: flex;
+  gap: 24px;
+}
+
+/**
+ * Enlaces de redes sociales del footer
+ */
+.footer-social-link {
+  color: #9ca3af;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/**
+ * Efecto hover de las redes sociales
+ */
+.footer-social-link:hover {
+  color: white;
+}
+
+/**
+ * Sección inferior del footer
+ * Línea separadora y copyright
+ */
+.footer-bottom {
+  border-top: 1px solid #4b5563;       /* Línea gris */
+  padding-top: 32px;
+  text-align: center;
+}
+
+/**
+ * Texto de copyright
+ */
+.footer-copyright {
+  color: #9ca3af;
+}
+
+/* ============================================================================
+   ANIMACIONES
+   ============================================================================ */
+
+/**
+ * Animación de entrada para todas las secciones
+ * FadeIn desde abajo con movimiento suave
+ */
+section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/**
+ * Definición de la animación fadeInUp
+ * Aparece desde abajo con transición de opacidad
+ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;                        /* Invisible */
+    transform: translateY(30px);       /* 30px hacia abajo */
+  }
+  to {
+    opacity: 1;                        /* Completamente visible */
+    transform: translateY(0);          /* Posición original */
+  }
+}
+
+/**
+ * Animación de borde pulsante en hover
+ * Las secciones tienen bordes que cambian de color
+ */
+section:hover {
+  animation: pulse-border 2s infinite;
+}
+
+/**
+ * Definición de la animación de borde pulsante
+ * Alternancia entre azul oscuro y azul claro
+ */
+@keyframes pulse-border {
+  0% {
+    border-color: #1a365d;             /* Azul oscuro */
+  }
+  50% {
+    border-color: #3b82f6;             /* Azul claro */
+  }
+  100% {
+    border-color: #1a365d;             /* Vuelta al azul oscuro */
+  }
+}
+
+/* ============================================================================
+   DISEÑO RESPONSIVE
+   ============================================================================ */
+
+/**
+ * Breakpoint para pantallas grandes (hasta 1200px)
+ * Ajustes para la sección de desarrolladores
+ */
+@media (max-width: 1200px) {
+  .developers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .developer-card {
+    max-width: 300px;
+  }
+}
+
+/**
+ * Breakpoint para tablets y pantallas medianas (hasta 1024px)
+ * Cambios significativos en el layout
+ */
+@media (max-width: 1024px) {
+  /* Ocultar menú desktop y mostrar botón móvil */
+  .desktop-menu {
+    display: none;
+  }
+  
+  .mobile-menu-button {
+    display: block;
+  }
+  
+  /* Hero pasa a una sola columna */
+  .hero-grid {
+    grid-template-columns: 1fr;         /* Una sola columna */
+    gap: 24px;
+  }
+  
+  /* Reducir tamaño del título */
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  /* Enlaces de apps en fila para tablets */
+  .app-links-container {
+    flex-direction: row;
+  }
+  
+  /* Tarjetas de privacidad en una columna */
+  .privacy-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Ajustar grid de desarrolladores */
+  .developers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  
+  /* Información de contacto en columna */
+  .contact-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Footer en columna */
+  .footer-content {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+  }
+}
+
+/**
+ * Breakpoint para tablets pequeñas (hasta 768px)
+ * Ajustes adicionales para pantallas medianas
+ */
+@media (max-width: 768px) {
+  .developers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .developer-card {
+    max-width: 100%;
+  }
+  
+  .contact-info-item {
+    font-size: 14px;
+  }
+}
+
+/**
+ * Breakpoint para móviles (hasta 640px)
+ * Ajustes completos para pantallas pequeñas
+ */
+@media (max-width: 640px) {
+  /* Reducir tamaños de títulos */
+  .hero-title {
+    font-size: 28px;
+  }
+  
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  
+  /* Enlaces de apps vuelven a columna en móviles */
+  .app-links-container {
+    flex-direction: column;
+  }
+  
+  /* Títulos de secciones más pequeños */
+  .privacy-title {
+    font-size: 36px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .developers-title {
+    font-size: 28px;
+  }
+  
+  .contact-title {
+    font-size: 28px;
+  }
+  
+  /* Desarrolladores en una sola columna */
+  .developers-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .developer-card {
+    max-width: 100%;
+  }
+  
+  /* Ajustar padding de tarjetas de desarrollador */
+  .developer-card-content {
+    padding: 20px;
+  }
+  
+  /* Reducir tamaños de texto */
+  .developer-name {
+    font-size: 16px;
+  }
+  
+  .developer-role {
+    font-size: 13px;
+  }
+  
+  .developer-description {
+    font-size: 12px;
+  }
+  
+  /* Ajustar elementos de contacto */
+  .contact-info-item {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  
+  .contact-info-icon {
+    margin-right: 6px;
+  }
+  
+  /* Reducir márgenes de secciones */
+  section {
+    margin: 10px;
+  }
+  
+  /* Contenedor de desarrolladores a ancho completo */
+  .developers-container {
+    max-width: 100%;
+  }
+}
