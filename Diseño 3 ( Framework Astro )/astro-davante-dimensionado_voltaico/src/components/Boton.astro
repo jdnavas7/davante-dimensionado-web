@@ -1,0 +1,122 @@
+---
+
+---
+<div class="modo-switch-container">
+  <button id="modo-switch" class="modo-switch" aria-label="Cambiar modo" onclick="toggleModo()">
+    <span class="icon sol" id="icon-sol">&#9728;</span>
+    <span class="icon luna" id="icon-luna">&#9790;</span>
+    <span class="switch-slider" id="switch-slider"></span>
+  </button>
+</div>
+
+<style>
+.modo-switch-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  padding-right: 84px;
+  z-index: 10;
+}
+
+.modo-switch {
+  position: relative;
+  width: 64px;
+  height: 32px;
+  background: var(--light-gray);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  outline: none;
+  padding: 0;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  z-index: 2;
+  transition: color 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+
+.icon.sol {
+  left: 10px;
+  color: var(--primary-blue);
+  opacity: 1;
+}
+
+.icon.luna {
+  right: 10px;
+  color: var(--primary-blue);
+  opacity: 0.5;
+}
+
+.switch-slider {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  background: var(--primary-blue);
+  border-radius: 50%;
+  transition: left 0.3s, background 0.3s;
+  z-index: 1;
+}
+
+/* Modo oscuro */
+body.modo-oscuro .modo-switch {
+  background: var(--primary-blue);
+}
+
+body.modo-oscuro .switch-slider {
+  left: 36px;
+  background: var(--light-gray);
+}
+
+body.modo-oscuro .icon.sol {
+  opacity: 0.5;
+  color: var(--light-gray);
+}
+
+body.modo-oscuro .icon.luna {
+  opacity: 1;
+  color: var(--light-gray);
+}
+
+@media screen and (max-width: 480px) {
+  .modo-switch-container {
+    padding-right: 0px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+}
+</style>
+
+<script is:inline>
+function toggleModo() {
+  document.body.classList.toggle('modo-oscuro');
+
+  // Cambia el logo del header
+  const logoHeader = document.getElementById('logo-header');
+  if (logoHeader) {
+    logoHeader.src = document.body.classList.contains('modo-oscuro')
+      ? '../../public/assets/Davante_logo_fundacion_vert_navy.png'
+      : '../../public/assets/Davante_logo_fundacion_vert_white.png';
+  }
+
+  // Cambia el logo del footer
+  const logoFooter = document.getElementById('logo-footer');
+  if (logoFooter) {
+    logoFooter.src = document.body.classList.contains('modo-oscuro')
+      ? 'assets/Davante_logo_fundacion_vert_navy.png'
+      : 'assets/Davante_logo_fundacion_vert_white.png';
+  }
+}
+</script>

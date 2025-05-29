@@ -2,13 +2,12 @@
 import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Boton from '../components/Boton.astro';
 ---
 
 <Layout title='Dimensionado Fotovoltaico'>
 	<Header />
+    <Boton />
 	<!-- Sección Privacidad -->
     <section id="privacidad" class="privacy-section">
         <div class="container">
@@ -130,7 +129,7 @@ img {
    SECCIÓN PRIVACIDAD
    ========================= */
 .privacy-section {
-    padding: 140px 0;
+    padding: 100px 0;
     background-color: var(--white);
 }
 
@@ -159,6 +158,12 @@ img {
 
 .privacy-block {
     margin-bottom: 40px;
+    background: var(--white); /* Fondo blanco modo claro */
+    border: 2px solid var(--primary-blue); /* Borde azul modo claro */
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 12px rgba(0,53,148,0.07);
+    transition: background 0.3s, border 0.3s;
 }
 
 .privacy-block h3 {
@@ -190,14 +195,36 @@ img {
     color: var(--primary-blue);
 }
 
-/* A partir de 768px hacia abajo, solo una columna */
-@media screen and (max-width: 768px) {
-    .privacy-section{
-        padding: 80px 0;
-    }
-    .privacy-content {
-        grid-template-columns: 1fr;
-    }
+/* =========================
+   MODO OSCURO
+   ========================= */
+body.modo-oscuro {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+body.modo-oscuro .privacy-section {
+    background: var(--primary-blue);
+}
+
+body.modo-oscuro .privacy-block {
+    background: var(--primary-blue);      /* Igual que el fondo */
+    border: 2px solid var(--white);       /* Borde blanco */
+}
+
+body.modo-oscuro .section-title,
+body.modo-oscuro .privacy-block h3 {
+    color: var(--white);
+}
+
+body.modo-oscuro .section-description,
+body.modo-oscuro .privacy-block p,
+body.modo-oscuro .privacy-block li {
+    color: var(--white);
+}
+
+body.modo-oscuro .privacy-block li::before {
+    color: var(--white);
 }
 
 /* =========================
@@ -209,7 +236,11 @@ img {
 
 @media screen and (max-width: 768px) {
     .privacy-section{
-        padding: 80px 0;
+        padding: 100px 0;
+    }
+
+    .privacy-content {
+        grid-template-columns: 1fr;
     }
 }
 

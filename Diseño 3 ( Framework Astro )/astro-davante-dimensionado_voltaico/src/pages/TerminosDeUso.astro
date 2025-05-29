@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Boton from '../components/Boton.astro';
+---
+
+<Layout title='Dimensionado Fotovoltaico'>
+    <Header />
+    <Boton />
+    <!-- Sección Términos de Uso -->
+    <section id="terminos" class="terms-section">
+        <div class="container">
+            <h2 class="section-title">Términos de Uso</h2>
+            <p class="section-description">Condiciones legales para el uso de nuestra aplicación y servicios</p>
+        
+            <div class="terms-content">
+                <div class="terms-block">
+                    <h3>1. Aceptación de los términos</h3>
+                    <p>Al acceder o utilizar nuestra aplicación de dimensionado de placas, aceptas quedar vinculado por estos términos de uso, así como por nuestra política de privacidad. Si no estás de acuerdo con alguno de estos términos, deberás abstenerte de utilizar la aplicación.</p>
+                </div>
+            
+                <div class="terms-block">
+                    <h3>2. Licencia de uso</h3>
+                    <p>Te concedemos una licencia limitada, no exclusiva, revocable e intransferible para acceder y utilizar la aplicación únicamente para fines personales o comerciales relacionados con el diseño, corte y dimensionado de placas.</p>
+                </div>
+            
+                <div class="terms-block">
+                    <h3>3. Creación y uso de cuentas</h3>
+                    <p>Para acceder a ciertas funciones, es posible que debas crear una cuenta. Te comprometes a proporcionar información veraz y a mantenerla actualizada. Eres responsable de mantener la confidencialidad de tus credenciales de acceso y de todas las actividades que se realicen desde tu cuenta.</p>
+                </div>
+
+                <div class="terms-block">
+                    <h3>4. Restricciones de uso</h3>
+                    <p>Está prohibido:</p>
+                    <ul>
+                        <li>Utilizar la aplicación con fines ilícitos o en violación de cualquier ley local, nacional o internacional</li>
+                        <li>Modificar, descompilar o realizar ingeniería inversa del software</li>
+                        <li>Acceder al código fuente o utilizar la aplicación para crear un producto similar</li>
+                        <li>Reproducir, distribuir o revender cualquier parte de la aplicación sin autorización expresa</li>
+                        <li>Usar bots, scrapers u otros métodos automatizados para acceder a la aplicación</li>
+                    </ul>
+                </div>
+            
+                <div class="terms-block">
+                    <h3>5. Propiedad intelectual</h3>
+                    <p>Todos los derechos de propiedad intelectual sobre la aplicación, incluidos su contenido, algoritmos, interfaz gráfica y diseño, son propiedad exclusiva de la empresa o de sus licenciantes, y están protegidos por las leyes de derechos de autor y tratados internacionales.</p>
+                </div>
+
+                <div class="terms-block">
+                    <h3>6. Exactitud de los resultados</h3>
+                    <p>Los cálculos generados por la aplicación son aproximados y dependen de los datos introducidos por el usuario. No garantizamos que los resultados sean totalmente precisos o aplicables a situaciones reales sin revisión profesional.</p>
+                </div>
+
+                <div class="terms-block">
+                    <h3>7. Datos personales y privacidad</h3>
+                    <p>El tratamiento de los datos personales se rige por nuestra Política de Privacidad. Recopilamos información mínima necesaria para el funcionamiento del servicio y la mejora de la experiencia del usuario. No compartimos tus datos con terceros sin tu consentimiento explícito, salvo obligación legal.</p>
+                </div>
+
+                <div class="terms-block">
+                    <h3>8. Uso aceptable</h3>
+                    <p>Te comprometes a utilizar la aplicación de manera responsable, ética y conforme a estos términos. El mal uso del servicio puede derivar en la suspensión o eliminación de tu cuenta sin previo aviso.</p>
+                </div>
+
+                <div class="terms-block">
+                    <h3>9. Soporte y actualizaciones</h3>
+                    <p>Ofrecemos soporte técnico básico a través de nuestros canales oficiales. Nos reservamos el derecho de realizar actualizaciones, parches o cambios en la aplicación sin previo aviso, siempre con el fin de mejorar el servicio o corregir errores.</p>
+                </div>
+
+                <div class="terms-block">
+                    <h3>10. Limitación de responsabilidad</h3>
+                    <p>La aplicación se ofrece "tal cual", sin garantías de ningún tipo. En ningún caso seremos responsables por daños directos, indirectos, incidentales, o consecuentes que resulten del uso o imposibilidad de uso del servicio, incluso si hemos sido advertidos de la posibilidad de dichos daños.</p>
+                </div>
+
+                <div class="terms-block">
+                    <h3>11. Modificaciones de los términos</h3>
+                    <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Las modificaciones entrarán en vigor en el momento de su publicación. Es tu responsabilidad revisar regularmente esta sección para estar al tanto de cualquier cambio.</p>
+                </div>
+
+                <div class="terms-block">
+                    <h3>12. Terminación</h3>
+                    <p>Podemos suspender o terminar tu acceso a la aplicación en caso de violación de estos términos o uso indebido del servicio. También puedes cancelar tu cuenta en cualquier momento desde las opciones de configuración.</p>
+                </div>
+
+                <div class="terms-block">
+                    <h3>13. Jurisdicción y legislación aplicable</h3>
+                    <p>Estos términos se rigen por las leyes del país donde opera la empresa. Cualquier disputa relacionada con la aplicación será resuelta ante los tribunales competentes del mismo país, salvo disposición legal en contrario.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <Footer />
+</Layout>
+
+
+<style>
+/* 
+   Hoja de estilos - Header responsive sin JavaScript
+   Colores principales:
+   - Azul: rgb(0, 53, 148)
+   - Gris claro: rgb(237, 237, 237)
+*/
+
+/* =========================
+   VARIABLES Y RESET
+   ========================= */
+:root {
+    --primary-blue: rgb(0, 53, 148);
+    --light-gray: rgb(237, 237, 237);
+    --white: #ffffff;
+    --dark-blue: rgb(0, 32, 89);
+    --light-blue: rgb(51, 102, 187);
+    --text-dark: #333333;
+    --text-light: #666666;
+    --shadow: 0 4px 10px rgba(0, 53, 148, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   ELEMENTOS COMUNES
+   ========================= */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   SECCIÓN TÉRMINOS DE USO
+   ========================= */
+.terms-section {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.terms-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.terms-block {
+    margin-bottom: 40px;
+}
+
+.terms-block h3 {
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.terms-block p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.terms-block ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.terms-block li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.terms-block li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+}
+
+/* =========================
+   MODO OSCURO
+   ========================= */
+body.modo-oscuro {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+body.modo-oscuro .terms-section {
+    background: var(--primary-blue);
+}
+
+body.modo-oscuro .section-title,
+body.modo-oscuro .terms-block h3 {
+    color: var(--white);
+}
+
+body.modo-oscuro .section-description,
+body.modo-oscuro .terms-block p,
+body.modo-oscuro .terms-block li {
+    color: var(--white);
+}
+
+body.modo-oscuro .terms-block li::before {
+    color: var(--white);
+}
+
+/* =========================
+   RESPONSIVE STYLES
+   ========================= */
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .terms-section {
+    padding: 100px 0;
+    
+}
+
+@media screen and (max-width: 480px) {
+    
+}
+</style>
