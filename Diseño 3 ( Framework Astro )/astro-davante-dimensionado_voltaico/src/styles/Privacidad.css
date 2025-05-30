@@ -1,0 +1,186 @@
+    /* 
+	Hoja de estilos - Header responsive sin JavaScript
+	Colores principales:
+	- Azul: rgb(0, 53, 148)
+	- Gris claro: rgb(237, 237, 237)
+*/
+
+/* =========================
+	VARIABLES Y RESET
+   ========================= */
+:root {
+    --primary-blue: rgb(0, 53, 148);
+    --light-gray: rgb(237, 237, 237);
+    --white: #ffffff;
+    --dark-blue: rgb(0, 32, 89);
+    --light-blue: rgb(51, 102, 187);
+    --text-dark: #333333;
+    --text-light: #666666;
+    --shadow: 0 4px 10px rgba(0, 53, 148, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* =========================
+   ELEMENTOS COMUNES
+   ========================= */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   SECCIÓN PRIVACIDAD
+   ========================= */
+.privacy-section {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.privacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.privacy-block {
+    margin-bottom: 40px;
+    background: var(--white); /* Fondo blanco modo claro */
+    border: 2px solid var(--primary-blue); /* Borde azul modo claro */
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 12px rgba(0,53,148,0.07);
+    transition: background 0.3s, border 0.3s;
+}
+
+.privacy-block h3 {
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.privacy-block p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.privacy-block ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.privacy-block li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.privacy-block li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+}
+
+/* =========================
+   MODO OSCURO
+   ========================= */
+body.modo-oscuro {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+body.modo-oscuro .privacy-section {
+    background: var(--primary-blue);
+}
+
+body.modo-oscuro .privacy-block {
+    background: var(--primary-blue);      /* Igual que el fondo */
+    border: 2px solid var(--white);       /* Borde blanco */
+}
+
+body.modo-oscuro .section-title,
+body.modo-oscuro .privacy-block h3 {
+    color: var(--white);
+}
+
+body.modo-oscuro .section-description,
+body.modo-oscuro .privacy-block p,
+body.modo-oscuro .privacy-block li {
+    color: var(--white);
+}
+
+body.modo-oscuro .privacy-block li::before {
+    color: var(--white);
+}
+
+/* =========================
+   RESPONSIVE STYLES
+   ========================= */
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    .privacy-section{
+        padding: 100px 0;
+    }
+
+    .privacy-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    
+}

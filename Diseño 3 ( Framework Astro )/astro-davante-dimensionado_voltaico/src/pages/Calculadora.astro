@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Boton from "../components/Boton.astro";
+import '../styles/Calculadora.css';
+---
+
+<Layout title='Dimensionado Fotovoltaico'>
+    <Header />
+    <Boton />
+    <!-- Sección Calculadora -->
+    <section id="calculadora" class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">Calculadora Fotovoltaica</h2>
+            <p class="section-description">Utiliza nuestra herramienta para calcular el dimensionado de tu instalación fotovoltaica</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-info">
+                    <h3>¿Cómo funciona?</h3>
+                    <p>Esta calculadora te permite dimensionar tu instalación fotovoltaica en función de tu consumo energético y ubicación.</p>
+                    <p>Utilizamos datos de irradiación solar precisos y algoritmos avanzados para proporcionar cálculos profesionales.</p>
+                    <ul class="feature-list">
+                        <li>Cálculo de paneles necesarios</li>
+                        <li>Estimación de producción energética</li>
+                        <li>Dimensionado de inversores y baterías</li>
+                        <li>Análisis de rentabilidad y amortización</li>
+                    </ul>
+                </div>
+                
+                <div class="calculator-api">
+                    <div class="api-placeholder">
+                        <h3>API de Cálculo Fotovoltaico</h3>
+                        <p>Aquí se integrará la API de cálculo fotovoltaico</p>
+                        <div class="api-mock">
+                            <div class="mock-field">
+                                <label>Ubicación</label>
+                                <input type="text" placeholder="Código postal o ciudad" >
+                            </div>
+                            <div class="mock-field">
+                                <label>Consumo mensual (kWh)</label>
+                                <input type="number" placeholder="300" >
+                            </div>
+                            <div class="mock-field">
+                                <label>Superficie disponible (m²)</label>
+                                <input type="number" placeholder="20" >
+                            </div>
+                            <button class="mock-button" >Calcular</button>
+                            <div class="mock-result">
+                                <p>Los resultados se mostrarán aquí</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <Footer />
+</Layout>
+

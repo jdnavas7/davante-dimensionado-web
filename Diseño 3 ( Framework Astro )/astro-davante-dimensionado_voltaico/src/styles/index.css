@@ -1,0 +1,568 @@
+	/* 
+   Hoja de estilos - Header responsive sin JavaScript
+   Colores principales:
+   - Azul: rgb(0, 53, 148)
+   - Gris claro: rgb(237, 237, 237)
+*/
+
+/* =========================
+   VARIABLES Y RESET
+   ========================= */
+:root {
+    --primary-blue: rgb(0, 53, 148);
+    --light-gray: rgb(237, 237, 237);
+    --white: #ffffff;
+    --dark-blue: rgb(0, 32, 89);
+    --light-blue: rgb(51, 102, 187);
+    --text-dark: #333333;
+    --text-light: #666666;
+    --shadow: 0 4px 10px rgba(0, 53, 148, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================
+   ELEMENTOS COMUNES
+   ========================= */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================
+   HERO SECTION 
+   ========================= */
+.hero-section {
+    padding: 100px 0 60px 0;
+    background: var(--white);
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 18px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 36px;
+    font-weight: 500;
+}
+
+.hero-app-download {
+    margin-bottom: 30px;
+}
+
+.hero-store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 18px;
+}
+
+.hero-store-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,53,148,0.08);
+}
+
+.hero-store-btn:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.hero-store-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+.apple-icon { color: #000; }
+.google-icon { color: #4285F4; }
+
+.hero-direct-download {
+    margin-top: 10px;
+}
+
+.hero-direct-download-btn {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,53,148,0.08);
+}
+
+.hero-direct-download-btn:hover {
+    background: var(--primary-blue);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* =========================
+   INFORMATION SECTION
+   ========================= */
+.information {
+    max-width: 900px;
+    margin: 60px auto 0 auto;
+    padding: 0 20px 40px 20px;
+    display: grid;
+    gap: 40px;
+}
+
+.app-utility,
+.app-functionality,
+.app-benefits,
+.app-users {
+    background: var(--white);
+    border: 2px solid var(--primary-blue);
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(0,53,148,0.07);
+    padding: 28px 24px;
+    margin-bottom: 0;
+    transition: background 0.3s, border 0.3s;
+}
+
+.app-utility h1,
+.app-functionality h1,
+.app-benefits h1,
+.app-users h1 {
+    font-size: 24px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.app-utility p,
+.app-functionality p,
+.app-benefits p,
+.app-users p {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.app-utility ul,
+.app-functionality ul,
+.app-benefits ul,
+.app-users ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.app-utility li,
+.app-functionality li,
+.app-benefits li,
+.app-users li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+    color: var(--text-dark);
+}
+
+.app-utility li::before,
+.app-functionality li::before,
+.app-benefits li::before,
+.app-users li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+    font-size: 1.2em;
+}
+
+/* =========================
+   DOWNLOAD FORMULARY SECTION 
+   ========================= */
+.download-formulary-section {
+    padding: 80px 0 60px 0;
+    background: var(--white);
+}
+
+.download-formulary-content {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.download-formulary-text h1,
+.download-formulary-text h2 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.download-formulary-text p {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.app-download p {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.store-btn {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,53,148,0.08);
+    gap: 10px;
+}
+
+.store-btn:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.store-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+.apple-icon { color: #000; }
+.google-icon { color: #4285F4; }
+
+.direct-download {
+    margin-top: 10px;
+}
+
+.direct-download-btn {
+    display: inline-block;
+    background: var(--light-blue);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,53,148,0.08);
+    width: 100%;
+    text-align: center;
+}
+
+.direct-download-btn:hover {
+    background: var(--primary-blue);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* =========================
+   FORMULARIO DE SUSCRIPCIÓN
+   ========================= */
+.subscription-form {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    color: var(--text-dark);
+    border: 2px solid var(--primary-blue);
+    min-width: 320px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.subscription-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.subscription-form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--primary-blue);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    background: var(--white);
+    color: var(--text-dark);
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 53, 148, 0.1);
+}
+
+.form-group.checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.form-group.checkbox input {
+    width: auto;
+    margin-top: 3px;
+}
+
+.form-group.checkbox label {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   MODO OSCURO
+   ========================= */
+body.modo-oscuro,
+body.modo-oscuro .hero-section,
+body.modo-oscuro .download-formulary-section {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+body.modo-oscuro .hero-text h1,
+body.modo-oscuro .download-formulary-text h1,
+body.modo-oscuro .download-formulary-text h2 {
+    color: var(--white);
+}
+
+body.modo-oscuro .hero-text p,
+body.modo-oscuro .download-formulary-text p {
+    color: var(--white);
+    opacity: 0.9;
+}
+
+body.modo-oscuro .hero-store-btn,
+body.modo-oscuro .store-btn,
+body.modo-oscuro .subscription-form {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+body.modo-oscuro .subscription-form h2,
+body.modo-oscuro .subscription-form p {
+	color: var(--white);
+	color: var(--white);
+}
+
+body.modo-oscuro .hero-store-btn:hover,
+body.modo-oscuro .store-btn:hover {
+    background: var(--white);
+    color: var(--primary-blue);
+}
+
+body.modo-oscuro .hero-direct-download-btn,
+body.modo-oscuro .direct-download-btn {
+    background: var(--white);
+    color: var(--primary-blue);
+}
+
+body.modo-oscuro .hero-direct-download-btn:hover,
+body.modo-oscuro .direct-download-btn:hover {
+    background: var(--light-blue);
+    color: var(--white);
+}
+
+body.modo-oscuro .form-group label {
+    color: var(--white);
+}
+
+body.modo-oscuro .form-group input,
+body.modo-oscuro .form-group select {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: 1.5px solid var(--white);
+}
+
+body.modo-oscuro .form-group input:focus,
+body.modo-oscuro .form-group select:focus {
+    border-color: var(--light-blue);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.10);
+}
+
+body.modo-oscuro .form-group.checkbox label {
+    color: var(--white);
+}
+
+/* =========================
+   RESPONSIVE STYLES
+   ========================= */
+@media screen and (max-width: 1024px) {
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    .download-formulary-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    .subscription-form {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 400px;
+        padding: 22px 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        padding: 70px 0 30px 0;
+    }
+    .download-formulary-section {
+        padding: 60px 0 30px 0;
+    }
+    .download-formulary-content {
+        gap: 24px;
+    }
+    .download-formulary-text,
+    .download-formulary-text h1,
+    .download-formulary-text h2,
+    .download-formulary-text p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .app-download,
+    .store-buttons,
+    .direct-download {
+        justify-content: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .store-buttons {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+    .hero-store-buttons {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-section {
+        padding: 40px 0 10px 0;
+    }
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+    .download-formulary-section {
+        padding: 40px 0 10px 0;
+    }
+    .subscription-form {
+        padding: 8px 0 4px 0;
+    }
+    .container {
+        padding: 0 6px;
+    }
+}
