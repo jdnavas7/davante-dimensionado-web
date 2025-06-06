@@ -42,7 +42,9 @@ import "../styles/Contacto.css";
                 </div>
                 <div class="contact-form-container">
                     <h3>Envíanos un mensaje</h3>
-                    <form class="contact-form">
+                    <!-- La primera vez que recibas un mensaje tendrás que confirmar tu email con Formsubmit (te mandan un correo de verificación).
+                        El correo se pone introduce en donde pone correo@ejemplo.com por el correo que quieres-->
+                    <form class="contact-form" action="https://formsubmit.co/correo@ejemplo.com" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="contact-name">Nombre</label>
